@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.square {
+
+    background-image: url(./images/logo-image-2.png);
+    background-position: center;
+    background-size: cover;
+    background-color: #ca0000;
+	width: 20vw;
+	height: 20vw;
+    border-radius: 50% 50%;
+	position: absolute;
+  	top: 30vh;
+    left: 10vh;
+    transform-origin: center;
+    animation-name: rotatesquare;
+    animation-duration: 3500ms;
+/*    animation-timing-function: cubic-bezier(.29,.17,.6,1.33);*/
+    animation-timing-function: cubic-bezier(.43,.25,.45,1.15);
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotatesquare {
+    0% {
+        top: 30vh;
+        left: -25%;
+        transform: rotate(75deg);
+        transform-origin: center;
+    }
+    
+    40% {
+        top: 30vh;
+        left: 60%;
+        transform: rotate(360deg);
+        transform-origin: center;
+    }
+    
+    45% {
+        top: 30vh;
+        transform: rotate(359deg);
+        transform-origin: left bottom;
+    }
+    
+    50% {  
+        transform: rotate(360deg);
+        border-radius: 0;  
+    }
+    
+    60% {
+        top: 30vh;
+        left: 60%;
+        transform: rotate(360deg);
+        background-position: top;
+        
+    }
+    
+    60% {
+        top: 32vh;
+        left: 60%;
+        transform: rotate(363deg);
+        background-position: top;
+    }
+    
+    100% {
+        top: -40vh;
+        left: 60%;
+        transform: rotate(360deg);
+        border-radius: 0;
+        background-position: top;
+    }
+
+}
+
+.rope {
+    
+    width: 7px;
+    height: 0px;
+    background-color: darkblue;
+    position: absolute;
+    top: 0;
+    left: 70%;
+    z-index: -1;
+    animation: rope-animation 1800ms 1000ms cubic-bezier(.73, .19,.31,.96);
+/*    animation: rope-animation 1800ms 1000ms cubic-bezier(.73,.19,.8,1.45);*/
+}
+
+@keyframes rope-animation {
+    0%, 100% {
+        height: 0px;   
+    }
+    
+    55% {
+        height: 250px;
+    }
+    
+    57% {
+        height: 230px;
+    }
+    
+}
+
