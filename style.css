@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+.row {
+    height: 80vh;
+    text-align: center;
+}
 .square {
 
     background-image: url(./images/logo-image-2.png);
@@ -14,8 +18,7 @@
     left: 10vh;
     transform-origin: center;
     animation-name: rotatesquare;
-    animation-duration: 3500ms;
-/*    animation-timing-function: cubic-bezier(.29,.17,.6,1.33);*/
+    animation-duration: 3700ms;
     animation-timing-function: cubic-bezier(.43,.25,.45,1.15);
     animation-fill-mode: forwards;
 }
@@ -50,8 +53,7 @@
         top: 30vh;
         left: 60%;
         transform: rotate(360deg);
-        background-position: top;
-        
+        background-position: top;  
     }
     
     60% {
@@ -71,8 +73,7 @@
 
 }
 
-.rope {
-    
+.rope { 
     width: 7px;
     height: 0px;
     background-color: darkblue;
@@ -80,8 +81,11 @@
     top: 0;
     left: 70%;
     z-index: -1;
-    animation: rope-animation 1800ms 1000ms cubic-bezier(.73, .19,.31,.96);
-/*    animation: rope-animation 1800ms 1000ms cubic-bezier(.73,.19,.8,1.45);*/
+    animation-name: rope-animation; 
+    animation-duration: 2000ms;
+    animation-delay:  1000ms;
+    animation-timing-function:  cubic-bezier(.73, .19,.31,.96);
+    animation-fill-mode: forwards; 
 }
 
 @keyframes rope-animation {
@@ -99,3 +103,123 @@
     
 }
 
+/*End of logo animation*/
+
+.spinners {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 60px;
+}
+
+.spinner-one {
+    background-color: #eee;
+}
+
+.spinner-one:after{
+
+    content: '';
+    display: block;
+    width: 72px;
+    height: 72px;
+    border: 3px solid transparent;
+    border-top-color: #ca0000;
+    border-bottom-color: #ca0000;
+    border-radius: 50%;
+    
+    animation: spinny 2s linear infinite; 
+}
+
+@keyframes spinny {
+    
+    0% {
+        transform: rotate(0deg) scale(1)
+    }
+    
+    50% {
+        transform: rotate(45deg) scale(1.2)
+    }
+    
+    100% {
+        transform: rotate(360deg) scale(1)
+    }
+}
+
+.spinner-two {
+    background: none;
+    border: 4px solid #eee;
+}
+
+.spinner-two:after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 40px;
+    background: #ca0000;
+    border-radius: 4px;
+    position: relative;
+    top: 50%;
+    left: 48%;
+    transform-origin: center top;
+    
+    animation: clock 2s linear infinite;
+     
+}
+
+@keyframes clock {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-three {
+    
+    height: 10px;
+    width: 10px;
+}
+
+.spinner-three span {
+    display: block;
+    height: 16px;
+    width: 16px;
+    background: #ddd;
+    border-radius: 50%;
+    position: absolute;
+    top: 70%;
+    
+}
+
+.spinner-three span:nth-child(1) {
+    left: 60px;
+    
+    animation: bounce 1s ease-in-out
+    infinite;
+}
+
+.spinner-three span:nth-child(2) {
+    left: 90px;
+    animation: bounce 1s 0.25s ease-in-out
+    infinite;
+}
+
+.spinner-three span:nth-child(3) {
+    left: 120px;
+    animation: bounce 1s 0.5s ease-in-out
+    infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+       transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+        background: #ca0000;
+    }
+}
+
+/*cubic-bezier(.73,.19,.8,1.45)*/
