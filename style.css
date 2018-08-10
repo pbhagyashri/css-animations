@@ -214,24 +214,6 @@
     animation: spinny 2s linear infinite; 
 }
 
-@-webkit-keyframes spinny {
-    
-    0% {
-        -webkit-transform: rotate(0deg) scale(1);
-        transform: rotate(0deg) scale(1)
-    }
-    
-    50% {
-        -webkit-transform: rotate(45deg) scale(1.2);
-        transform: rotate(45deg) scale(1.2)
-    }
-    
-    100% {
-        -webkit-transform: rotate(360deg) scale(1);
-        transform: rotate(360deg) scale(1)
-    }
-}
-
 @keyframes spinny {
     
     0% {
@@ -250,6 +232,9 @@
     }
 }
 
+/*End of first spinner section*/
+
+
 .spinner-two {
     border: 4px solid #eee;
     background: none;
@@ -265,6 +250,7 @@
     width: 4px;
     height: 40px;
     background: #ca0000;
+/*    set the transform origin to center top to align clock hand at the center*/
     -webkit-transform-origin: center top;
     transform-origin: center top;
     
@@ -275,7 +261,8 @@
      
 }
 
-@-webkit-keyframes clock {
+@keyframes clock {
+/*    rotate he clock arm 360 degree*/
     0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
@@ -287,27 +274,15 @@
     }
 }
 
-@keyframes clock {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
+/*End of clock section*/
 
 .spinner-three {
     position: relative;
-    
     height: 1px;
     width: 1px;
 }
 
 .spinner-three span {
-    
     display: inline-block;
     position: absolute;
     top: 70%;
@@ -319,57 +294,32 @@
 
 .spinner-three span:nth-child(1) {
     left: 60px;
-    -webkit-animation: bounce 1s ease-in-out
-    infinite;
-    animation: bounce 1s ease-in-out
-    infinite;
+    animation: bounce 1000ms ease-in-out infinite;
 }
 
 .spinner-three span:nth-child(2) {
     left: 90px;
-    -webkit-animation: bounce 1s 0.25s ease-in-out
-    infinite;
-    animation: bounce 1s 0.25s ease-in-out
-    infinite;
+    animation: bounce 1000ms 250ms ease-in-out infinite;
 }
 
 .spinner-three span:nth-child(3) {
     left: 120px;
-    -webkit-animation: bounce 1s 0.5s ease-in-out
-    infinite;
-    animation: bounce 1s 0.5s ease-in-out
-    infinite;
-}
-
-@-webkit-keyframes bounce {
-    0%, 100% {
-       -webkit-transform: translateY(0px);
-       transform: translateY(0px);
-    }
-    50% {
-        -webkit-transform: translateY(-15px);
-        transform: translateY(-15px);
-        background: #ca0000;
-    }
+    animation: bounce 1000ms 500ms ease-in-out infinite;
 }
 
 @keyframes bounce {
     0%, 100% {
-
-        -webkit-transform: translateY(0px);
-        transform: translateY(0px);
-        transform: translateX(0px);
+        transform: translateY(0);
     }
-    50% {
-        
-        -webkit-transform: translateY(-15px);
-        transform: translateY(-15px);
-        background: #ca0000;
     
+    50% {
+        transform: translateY(-15px);
+        background-color: #ca0000
     }
 }
 
-/*end of spinners section*/
+
+/*end of third dot spinners section*/
 
 .flap {
     display: inline-block;
@@ -426,6 +376,7 @@
 }
 
 @keyframes grow-and-shrink {
+/*    change width and left position of bars*/
     0% {
         width: 100px;
     }
@@ -444,4 +395,3 @@
         left: 150vw;
     }
 }
-/*for overshoot effect - cubic-bezier(.73,.19,.8,1.45)*/
