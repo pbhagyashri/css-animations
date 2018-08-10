@@ -1,55 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+.logo-section {
+    height: 620px;
+}
 .row {
-    height: 80vh;
     text-align: center;
+    padding-bottom: 30px;
+}
+
+.logo-section p {
+    text-align: left;
 }
 .square {
 
     background-image: url(./images/logo-image-2.png);
     background-position: center;
     background-size: cover;
-    background-color: #ca0000;
 	width: 22vw;
 	height: 22vw;
     border-radius: 50% 50%;
 	position: absolute;
   	top: 50vh;
     left: 10vh;
-    transform-origin: center;
+    
+    -webkit-animation-name: rotatesquare;
     animation-name: rotatesquare;
+    
+    -webkit-animation-duration: 3700ms;
     animation-duration: 3700ms;
+    
+    -webkit-animation-timing-function: cubic-bezier(.43,.25,.45,1.15);
     animation-timing-function: cubic-bezier(.43,.25,.45,1.15);
+    
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    
+    -webkit-transform-origin: center;
+    transform-origin: center;
 }
 
-@keyframes rotatesquare {
+@-webkit-keyframes rotatesquare {
     0% {
         top: 50vh;
         left: -25%;
+        -webkit-transform: rotate(75deg);
         transform: rotate(75deg);
+        -webkit-transform-origin: center;
         transform-origin: center;
     }
     
     40% {
         top: 50vh;
         left: 60%;
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
+        -webkit-transform-origin: center;
         transform-origin: center;
     }
     
     45% {
         top: 50vh;
+        -webkit-transform: rotate(359deg);
         transform: rotate(359deg);
+        -webkit-transform-origin: left bottom;
         transform-origin: left bottom;
     }
     
     50% {
         top: 50vh;
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
         border-radius: 0;  
     }
     
     60% {
         left: 60%;
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
         background-position: top;  
     }
@@ -58,6 +84,60 @@
     100% {
         top: -50vh;
         left: 60%;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        border-radius: 0;
+        background-position: top;
+    }
+
+}
+
+@keyframes rotatesquare {
+    0% {
+        top: 50vh;
+        left: -25%;
+        -webkit-transform: rotate(75deg);
+        transform: rotate(75deg);
+        -webkit-transform-origin: center;
+        transform-origin: center;
+    }
+    
+    40% {
+        top: 50vh;
+        left: 60%;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transform-origin: center;
+        transform-origin: center;
+    }
+    
+    45% {
+        top: 50vh;
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+        -webkit-transform-origin: left bottom;
+        transform-origin: left bottom;
+    }
+    
+    50% {
+        top: 50vh;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        border-radius: 0;  
+    }
+    
+    60% {
+        left: 60%;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        background-position: top;  
+    }
+    
+    
+    100% {
+        top: -50vh;
+        left: 60%;
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
         border-radius: 0;
         background-position: top;
@@ -66,27 +146,40 @@
 }
 
 .rope { 
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 72%;
     width: 7px;
     height: 0%;
     background-color: darkblue;
-    position: absolute;
-    top: 0;
-    left: 74%;
-    z-index: -1;
+    
+    -webkit-animation-name: rope-animation;
     animation-name: rope-animation; 
+    -webkit-animation-duration: 1970ms; 
     animation-duration: 1970ms;
+    -webkit-animation-delay:  783ms;
     animation-delay:  783ms;
-    animation-timing-function: ease-in;
+    animation-timing-function: ease-out;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards; 
 }
 
-@keyframes rope-animation {
-    0%, 100% {
-        height: 0vw;   
+@-webkit-keyframes rope-animation {
+    0%{
+        height: 0;   
     }
     
     55% {
-        height: 53vh;
+        height: 62vh;
+    }
+    
+    60% {
+        height: 60vh;
+    }
+    
+    100% {
+        height: 0;
     }
     
 }
@@ -94,10 +187,11 @@
 /*End of logo animation*/
 
 .spinners {
+    display: inline-block;
+    margin: 60px;
+    border-radius: 50%;
     width: 70px;
     height: 70px;
-    border-radius: 50%;
-    margin: 60px;
 }
 
 .spinner-one {
@@ -108,106 +202,246 @@
 
     content: '';
     display: block;
-    width: 72px;
-    height: 72px;
+    border-radius: 50%;
     border: 3px solid transparent;
     border-top-color: #ca0000;
     border-bottom-color: #ca0000;
-    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    
+    -webkit-animation: spinny 2s linear infinite;
     
     animation: spinny 2s linear infinite; 
+}
+
+@-webkit-keyframes spinny {
+    
+    0% {
+        -webkit-transform: rotate(0deg) scale(1);
+        transform: rotate(0deg) scale(1)
+    }
+    
+    50% {
+        -webkit-transform: rotate(45deg) scale(1.2);
+        transform: rotate(45deg) scale(1.2)
+    }
+    
+    100% {
+        -webkit-transform: rotate(360deg) scale(1);
+        transform: rotate(360deg) scale(1)
+    }
 }
 
 @keyframes spinny {
     
     0% {
+        -webkit-transform: rotate(0deg) scale(1);
         transform: rotate(0deg) scale(1)
     }
     
     50% {
+        -webkit-transform: rotate(45deg) scale(1.2);
         transform: rotate(45deg) scale(1.2)
     }
     
     100% {
+        -webkit-transform: rotate(360deg) scale(1);
         transform: rotate(360deg) scale(1)
     }
 }
 
 .spinner-two {
-    background: none;
     border: 4px solid #eee;
+    background: none;
 }
 
 .spinner-two:after {
-    content: '';
     display: block;
-    width: 4px;
-    height: 40px;
-    background: #ca0000;
-    border-radius: 4px;
     position: relative;
     top: 50%;
     left: 48%;
+    border-radius: 4px;
+   
+    width: 4px;
+    height: 40px;
+    background: #ca0000;
+    -webkit-transform-origin: center top;
     transform-origin: center top;
+    
+    -webkit-animation: clock 2s linear infinite;
+    content: '';
     
     animation: clock 2s linear infinite;
      
 }
 
-@keyframes clock {
+@-webkit-keyframes clock {
     0% {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     
     100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes clock {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    
+    100% {
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
 
 .spinner-three {
+    position: relative;
     
-    height: 10px;
-    width: 10px;
+    height: 1px;
+    width: 1px;
 }
 
 .spinner-three span {
-    display: block;
+    
+    display: inline-block;
+    position: absolute;
+    top: 70%;
+    border-radius: 50%;
     height: 16px;
     width: 16px;
     background: #ddd;
-    border-radius: 50%;
-    position: absolute;
-    top: 70%;
-    
 }
 
 .spinner-three span:nth-child(1) {
     left: 60px;
-    
+    -webkit-animation: bounce 1s ease-in-out
+    infinite;
     animation: bounce 1s ease-in-out
     infinite;
 }
 
 .spinner-three span:nth-child(2) {
     left: 90px;
+    -webkit-animation: bounce 1s 0.25s ease-in-out
+    infinite;
     animation: bounce 1s 0.25s ease-in-out
     infinite;
 }
 
 .spinner-three span:nth-child(3) {
     left: 120px;
+    -webkit-animation: bounce 1s 0.5s ease-in-out
+    infinite;
     animation: bounce 1s 0.5s ease-in-out
     infinite;
 }
 
-@keyframes bounce {
+@-webkit-keyframes bounce {
     0%, 100% {
+       -webkit-transform: translateY(0px);
        transform: translateY(0px);
     }
     50% {
+        -webkit-transform: translateY(-15px);
         transform: translateY(-15px);
         background: #ca0000;
     }
 }
 
-/*cubic-bezier(.73,.19,.8,1.45)*/
+@keyframes bounce {
+    0%, 100% {
+
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        transform: translateX(0px);
+    }
+    50% {
+        
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+        background: #ca0000;
+    
+    }
+}
+
+/*end of spinners section*/
+
+.flap {
+    display: inline-block;
+    position: relative;
+    width: 50vw;
+    height: 130px;
+    overflow: hidden;
+    background-color: #eee;
+    
+}
+
+.bar {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    display: inline-block;
+    height: 3vh;
+    opacity: 0.8;
+}
+
+.bar:nth-child(1) {
+    z-index: 1;
+    top: 0;
+    width: 135px;
+    background-color: #7b967a;
+    animation: grow-and-shrink 4000ms ease-in infinite;
+}
+
+.bar:nth-child(2) {
+    z-index: 1;
+    top: 5vh;
+    width: 205px;
+    background-color: #e7ded5;
+    animation: grow-and-shrink 4000ms 450ms ease-in  infinite;
+}
+
+
+.bar:nth-child(3) {
+    z-index: 1;
+    top: 10vh;
+    width: 275px;
+    background-color: #e68181;
+    animation: grow-and-shrink 4000ms 750ms ease-in infinite;
+}
+
+
+.bar:nth-child(4){
+    z-index: 1;
+    top: 15vh;
+    width: 350px;
+    background-color: #494c6c;
+    animation: grow-and-shrink 4000ms 150ms ease-in infinite;
+}
+
+@keyframes grow-and-shrink {
+    0% {
+        width: 100px;
+    }
+    
+    25% {
+        width: 500px;
+        left: 0px;
+    }
+    
+    50% {
+        width: 100px;
+        left: 50vw;
+    }
+    
+    100% {
+        left: 150vw;
+    }
+}
+/*for overshoot effect - cubic-bezier(.73,.19,.8,1.45)*/
