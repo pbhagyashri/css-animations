@@ -236,7 +236,7 @@
 .spinner-three span {
     display: inline-block;
     position: absolute;
-    top: 195%;
+    top: 15%;
     border-radius: 50%;
     height: 16px;
     width: 16px;
